@@ -15,29 +15,29 @@ spring:
         - id: auth-service
           uri: http://bidvbpm-auth-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Header=hostname, bidvbpm.reborn.vn
+            - Host=bidvbpm.reborn.vn,bidvbpmsso.reborn.vn
             - Path=/authenticator/**
 
         - id: system-service
           uri: http://bidvbpm-system-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Header=hostname, bidvbpm.reborn.vn
+            - Host=bidvbpm.reborn.vn,bidvbpmsso.reborn.vn
             - Path=/system/**
 
         - id: api-service
           uri: http://bidvbpm-api-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Header=hostname, bidvbpm.reborn.vn
+            - Host=bidvbpm.reborn.vn
             - Path=/adminapi/**
 
         - id: application-service
           uri: http://bidvbpm-app-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Header=hostname, bidvbpm.reborn.vn
+            - Host=bidvbpm.reborn.vn
             - Path=/application/**
 
         - id: notification-service
           uri: http://bidvbpm-noti-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Header=hostname, bidvbpm.reborn.vn
+            - Host=bidvbpm.reborn.vn
             - Path=/notification/**
