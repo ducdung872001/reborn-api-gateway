@@ -27,7 +27,7 @@ spring:
         - id: api-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
-            - Header=hostname, bidvbpmapi.reborn.vn
+            - Header=hostname, bidvbpm.reborn.vn
             - Path=/adminapi/**
 
         - id: application-service
