@@ -1,0 +1,48 @@
+server:
+  port: 9500
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]': # Apply to all paths
+            allowedOrigins: "*" # Allow all origins
+            allowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+            allowedHeaders: [ "*" ] # Allow all headers
+            allowCredentials: false # Set to false when using "*"
+      routes:
+        - id: auth-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/authenticator/**
+
+        - id: system-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/system/**
+
+        - id: api-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/adminapi/**
+
+        - id: application-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/application/**
+
+        - id: integration-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/integration/**
+
+        - id: notification-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/notification/**
+
+        - id: portal-service
+          uri: https://bidvbpmapi.reborn.vn
+          predicates:
+            - Path=/portal/**

@@ -1,0 +1,41 @@
+server:
+  port: 9500
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/authenticator/**
+
+        - id: system-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/system/**
+
+        - id: admin-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/adminapi/**
+
+        - id: application-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/application/**
+
+        - id: integration-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/integration/**
+
+        - id: notification-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/notification/**
+
+        - id: portal-service
+          uri: https://bpmapi1-uat.rox.vn
+          predicates:
+            - Path=/portal/**
