@@ -1,0 +1,15 @@
+.idea
+*.iws
+*.iml
+*.ipr
+*.jar
+.gitmodules
+
+.vertx
+*/**/.git
+*/**/git
+*/**/.idea
+*/**/target
+*/**/.iml
+
+target
