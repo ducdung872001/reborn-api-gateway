@@ -49,6 +49,8 @@ spring:
             - Path=/sso/**,/sso
           filters:
             - PreserveHostHeader
+            - AddRequestHeader=X-Forwarded-Proto, https
+            - AddRequestHeader=X-Forwarded-Port, 443
 
         - id: frontend-service
           uri: http://bidvbpm-fe-service.bidvbpm.svc.cluster.local:80
