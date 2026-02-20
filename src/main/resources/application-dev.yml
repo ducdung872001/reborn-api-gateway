@@ -13,13 +13,13 @@ spring:
             allowCredentials: false # Set to false when using "*"
       routes:
         - id: auth-service
-          uri: https://bidvbpmapi.reborn.vn
+          uri: http://bidvbpm-auth-service.bidvbpm.svc.cluster.local:9090
           predicates:
             - Header=hostname, bidvbpm.reborn.vn
             - Path=/authenticator/**
 
         - id: system-service
-          uri: https://bidvbpmapi.reborn.vn
+          uri: http://bidvbpm-system-service.bidvbpm.svc.cluster.local:9090
           predicates:
             - Header=hostname, bidvbpm.reborn.vn
             - Path=/system/**
@@ -31,25 +31,13 @@ spring:
             - Path=/adminapi/**
 
         - id: application-service
-          uri: https://bidvbpmapi.reborn.vn
+          uri: http://bidvbpm-app-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Host=gw.reborn.vn
+            - Header=hostname, bidvbpm.reborn.vn
             - Path=/application/**
 
-        - id: integration-service
-          uri: https://bidvbpmapi.reborn.vn
-          predicates:
-            - Host=gw.reborn.vn
-            - Path=/integration/**
-
         - id: notification-service
-          uri: https://bidvbpmapi.reborn.vn
+          uri: http://bidvbpm-noti-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Host=gw.reborn.vn
+            - Header=hostname, bidvbpm.reborn.vn
             - Path=/notification/**
-
-        - id: portal-service
-          uri: https://bidvbpmapi.reborn.vn
-          predicates:
-            - Host=bidvbpmapi.reborn.vn
-            - Path=/portal/**
