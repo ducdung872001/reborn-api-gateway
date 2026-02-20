@@ -15,17 +15,17 @@ spring:
         - id: auth-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
-            - Host=gw.reborn.vn
+            - Header=hostname, bidvbpm.reborn.vn
             - Path=/authenticator/**
 
         - id: system-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
-            - Host=gw.reborn.vn
+            - Header=hostname, bidvbpm.reborn.vn
             - Path=/system/**
 
         - id: api-service
-          uri: https://bidvbpmapi.reborn.vn
+          uri: http://bidvbpm-api-service.bidvbpm.svc.cluster.local:9090
           predicates:
             - Header=hostname, bidvbpm.reborn.vn
             - Path=/adminapi/**
