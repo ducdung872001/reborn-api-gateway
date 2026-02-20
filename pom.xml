@@ -9,7 +9,7 @@
     </parent>
     <groupId>vn.reborn</groupId>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>api-gateway</artifactId>
+    <artifactId>reborn-api-gateway</artifactId>
     <description>Spring Cloud Gateway Service</description>
 
     <properties>
