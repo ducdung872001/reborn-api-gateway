@@ -46,9 +46,9 @@ spring:
           uri: http://bidvbpm-sso-service.bidvbpm.svc.cluster.local:80
           predicates:
             - Host=bidvbpm.reborn.vn
-            - Path=/sso/**
+            - Path=/sso,/sso/**
           filters:
-            - PreserveHostHeader
+            - StripPrefix=1
 
         - id: frontend-service
           uri: http://bidvbpm-fe-service.bidvbpm.svc.cluster.local:80
