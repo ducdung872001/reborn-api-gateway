@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>vn.lena</groupId>
+    <groupId>vn.reborn</groupId>
     <artifactId>reborn-api-gateway</artifactId>
     <version>1.0.0</version>
     <description>Spring Cloud Gateway Service</description>
