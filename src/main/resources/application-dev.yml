@@ -46,7 +46,7 @@ spring:
           uri: http://bidvbpm-sso-service.bidvbpm.svc.cluster.local:80
           predicates:
             - Host=bidvbpm.reborn.vn
-            - Path=/sso/**,/sso
+            - Path=/sso/**
           filters:
             - PreserveHostHeader
             - AddRequestHeader=X-Forwarded-Proto, https
