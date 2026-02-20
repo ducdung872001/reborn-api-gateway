@@ -15,34 +15,41 @@ spring:
         - id: auth-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/authenticator/**
 
         - id: system-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/system/**
 
         - id: api-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/adminapi/**
 
         - id: application-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/application/**
 
         - id: integration-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/integration/**
 
         - id: notification-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/notification/**
 
         - id: portal-service
           uri: https://bidvbpmapi.reborn.vn
           predicates:
+            - Host=bidvbpmapi.reborn.vn
             - Path=/portal/**
