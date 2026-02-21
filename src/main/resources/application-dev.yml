@@ -50,6 +50,12 @@ spring:
           filters:
             - StripPrefix=1
 
+        - id: oss-service
+          uri: http://bidvbpm-sso-service.bidvbpm.svc.cluster.local:80
+          predicates:
+            - Host=bidvbpm.reborn.vn
+            - Path=/oss,/oss/**
+
         - id: frontend-service
           uri: http://bidvbpm-fe-service.bidvbpm.svc.cluster.local:80
           predicates:
