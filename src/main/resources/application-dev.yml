@@ -183,8 +183,8 @@ spring:
           filters:
             - PreserveHostHeader
 
-        - id: staffx-frontend-service
-          uri: http://staffx-frontend-service.staffx.svc.cluster.local:80
+        - id: staffx-worker-service
+          uri: http://worker-service.staffx.svc.cluster.local:80
           predicates:
             - Host=staffx.vn
             - Path=/**
