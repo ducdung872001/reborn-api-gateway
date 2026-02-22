@@ -117,3 +117,76 @@ spring:
             - Path=/**
           filters:
             - PreserveHostHeader
+
+        # staffx
+        # re-use bpm
+        - id: staffx-auth-service
+          uri: http://rox-auth-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=staffx.vn
+            - Path=/authenticator/**
+
+        # re-use bpm
+        - id: staffx-system-service
+          uri: http://rox-system-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=staff.vn
+            - Path=/system/**
+
+        - id: billing-api-service
+          uri: http://billing-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx.vn
+            - Path=/billing/**
+
+        - id: config-api-service
+          uri: http://config-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx.vn
+            - Path=/config/**
+
+        - id: identity-api-service
+          uri: http://identity-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx.vn
+            - Path=/identity/**
+
+        - id: integration-api-service
+          uri: http://integration-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx.vn
+            - Path=/integration/**
+
+        - id: marketplace-api-service
+          uri: http://marketplace-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx
+            - Path=/marketplace/**
+
+        - id: registry-api-service
+          uri: http://registry-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx
+            - Path=/registry/**
+
+        - id: runtime-api-service
+          uri: http://runtime-api-service.staffx.svc.cluster.local:9090
+          predicates:
+            - Host=staffx
+            - Path=/runtime/**
+
+        - id: staffx-sso-service
+          uri: http://staffx-sso-service.staffx.svc.cluster.local:80
+          predicates:
+            - Host=staffx.vn
+            - Path=/sso,/sso/**
+          filters:
+            - PreserveHostHeader
+
+        - id: staffx-frontend-service
+          uri: http://staffx-frontend-service.staffx.svc.cluster.local:80
+          predicates:
+            - Host=staffx.vn
+            - Path=/**
+          filters:
+            - PreserveHostHeader
