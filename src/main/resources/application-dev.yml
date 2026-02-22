@@ -101,3 +101,11 @@ spring:
           predicates:
             - Host=bpm.reborn.vn
             - Path=/portal/**
+
+        - id: bpm-sso-service
+          uri: http://rox-sso-service.rox.svc.cluster.local:80
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/sso,/sso/**
+          filters:
+            - PreserveHostHeader
