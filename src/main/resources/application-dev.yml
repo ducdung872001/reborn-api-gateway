@@ -12,37 +12,38 @@ spring:
             allowedHeaders: [ "*" ] # Allow all headers
             allowCredentials: false # Set to false when using "*"
       routes:
-        - id: auth-service
+        # bidvbpm
+        - id: bidvbpm-auth-service
           uri: http://bidvbpm-auth-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Host=bidvbpm.reborn.vn,bidvbpmsso.reborn.vn
+            - Host=bidvbpm.reborn.vn
             - Path=/authenticator/**
 
-        - id: system-service
+        - id: bidvbpm-system-service
           uri: http://bidvbpm-system-service.bidvbpm.svc.cluster.local:9090
           predicates:
-            - Host=bidvbpm.reborn.vn,bidvbpmsso.reborn.vn
+            - Host=bidvbpm.reborn.vn
             - Path=/system/**
 
-        - id: api-service
+        - id: bidvbpm-api-service
           uri: http://bidvbpm-api-service.bidvbpm.svc.cluster.local:9090
           predicates:
             - Host=bidvbpm.reborn.vn
             - Path=/adminapi/**
 
-        - id: application-service
+        - id: bidvbpm-application-service
           uri: http://bidvbpm-app-service.bidvbpm.svc.cluster.local:9090
           predicates:
             - Host=bidvbpm.reborn.vn
             - Path=/application/**
 
-        - id: notification-service
+        - id: bidvbpm-notification-service
           uri: http://bidvbpm-noti-service.bidvbpm.svc.cluster.local:9090
           predicates:
             - Host=bidvbpm.reborn.vn
             - Path=/notification/**
 
-        - id: sso-service
+        - id: bidvbpm-sso-service
           uri: http://bidvbpm-sso-service.bidvbpm.svc.cluster.local:80
           predicates:
             - Host=bidvbpm.reborn.vn
@@ -50,10 +51,53 @@ spring:
           filters:
             - PreserveHostHeader
 
-        - id: frontend-service
+        - id: bidvbpm-frontend-service
           uri: http://bidvbpm-fe-service.bidvbpm.svc.cluster.local:80
           predicates:
             - Host=bidvbpm.reborn.vn
             - Path=/**
           filters:
             - PreserveHostHeader
+
+        # bpm
+        - id: bpm-auth-service
+          uri: http://rox-auth-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/authenticator/**
+
+        - id: bpm-system-service
+          uri: http://rox-system-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/system/**
+
+        - id: bpm-api-service
+          uri: http://rox-api-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/adminapi/**
+
+        - id: bpm-application-service
+          uri: http://rox-app-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/application/**
+
+        - id: bpm-integration-service
+          uri: http://rox-integration-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/integration/**
+
+        - id: bpm-notification-service
+          uri: http://rox-noti-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/notification/**
+
+        - id: bpm-portal-service
+          uri: http://rox-bidbe-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/portal/**
