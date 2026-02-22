@@ -109,3 +109,11 @@ spring:
             - Path=/sso,/sso/**
           filters:
             - PreserveHostHeader
+
+        - id: bpm-frontend-service
+          uri: http://bpm-fe-service.bidvbpm.svc.cluster.local:80
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/**
+          filters:
+            - PreserveHostHeader
