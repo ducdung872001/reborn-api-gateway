@@ -111,7 +111,7 @@ spring:
             - PreserveHostHeader
 
         - id: bpm-frontend-service
-          uri: http://bpm-fe-service.rox.svc.cluster.local:80
+          uri: http://rox-fe-service.rox.svc.cluster.local:80
           predicates:
             - Host=bpm.reborn.vn
             - Path=/**
