@@ -130,7 +130,7 @@ spring:
         - id: staffx-system-service
           uri: http://rox-system-service.rox.svc.cluster.local:9090
           predicates:
-            - Host=staff.vn
+            - Host=staffx.vn
             - Path=/system/**
 
         - id: billing-api-service
