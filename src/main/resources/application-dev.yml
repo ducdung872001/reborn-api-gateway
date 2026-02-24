@@ -14,7 +14,7 @@ spring:
               - "https://*.reborn.vn"
             allowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
             allowedHeaders: [ "*" ] # Allow all headers
-            allowCredentials: false # Set to false when using "*"
+            allowCredentials: true # Set to false when using "*"
       routes:
         # bidvbpm
         - id: bidvbpm-auth-service
