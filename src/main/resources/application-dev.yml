@@ -11,8 +11,7 @@ spring:
             allowedOriginPatterns:
               - "http://localhost:*"
               - "https://staffx.vn"
-              - "https://bidvbpm.reborn.vn"
-              - "https://bpm.reborn.vn"
+              - "https://*.reborn.vn"
             allowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
             allowedHeaders: [ "*" ] # Allow all headers
             allowCredentials: false # Set to false when using "*"
