@@ -8,8 +8,8 @@ spring:
         add-to-simple-url-handler-mapping: true
         cors-configurations:
           '[/**]': # Apply to all paths
-            allowedOrigins:
-              - "http://localhost:4000"
+            allowedOriginPatterns:
+              - "http://localhost:*"
               - "https://staffx.vn"
               - "https://bidvbpm.reborn.vn"
               - "https://bpm.reborn.vn"
