@@ -5,9 +5,14 @@ spring:
   cloud:
     gateway:
       globalcors:
+        add-to-simple-url-handler-mapping: true
         cors-configurations:
           '[/**]': # Apply to all paths
-            allowedOrigins: "*" # Allow all origins
+            allowedOrigins:
+              - "http://localhost:4000"
+              - "https://staffx.vn"
+              - "https://bidvbpm.reborn.vn"
+              - "https://bpm.reborn.vn"
             allowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
             allowedHeaders: [ "*" ] # Allow all headers
             allowCredentials: false # Set to false when using "*"
@@ -160,19 +165,19 @@ spring:
         - id: marketplace-api-service
           uri: http://marketplace-api-service.staffx.svc.cluster.local:9090
           predicates:
-            - Host=staffx
+            - Host=staffx.vn
             - Path=/marketplace/**
 
         - id: registry-api-service
           uri: http://registry-api-service.staffx.svc.cluster.local:9090
           predicates:
-            - Host=staffx
+            - Host=staffx.vn
             - Path=/registry/**
 
         - id: runtime-api-service
           uri: http://runtime-api-service.staffx.svc.cluster.local:9090
           predicates:
-            - Host=staffx
+            - Host=staffx.vn
             - Path=/runtime/**
 
         - id: staffx-sso-service
