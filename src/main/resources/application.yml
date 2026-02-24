@@ -12,14 +12,3 @@ vertx:
       secret-key: ebb45472b2b2f2332a878adf21ac8afdc65474e2
       header: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
       expired-in: 15552000000 #6 tháng
-
-spring:
-  cloud:
-    gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]': # Apply to all paths
-            allowedOrigins: "*" # Allow all origins
-            allowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
-            allowedHeaders: [ "*" ] # Allow all headers
-            allowCredentials: false # Set to false when using "*"
