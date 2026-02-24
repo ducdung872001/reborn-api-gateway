@@ -5,16 +5,12 @@ spring:
   cloud:
     gateway:
       globalcors:
-        add-to-simple-url-handler-mapping: true
         cors-configurations:
           '[/**]': # Apply to all paths
-            allowedOriginPatterns:
-              - "http://localhost:*"
-              - "https://staffx.vn"
-              - "https://*.reborn.vn"
+            allowedOrigins: "*"
             allowedMethods: [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
             allowedHeaders: [ "*" ] # Allow all headers
-            allowCredentials: true # Set to false when using "*"
+            allowCredentials: false # Set to false when using "*"
       routes:
         # bidvbpm
         - id: bidvbpm-auth-service
