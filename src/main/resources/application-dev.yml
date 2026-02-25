@@ -81,6 +81,12 @@ spring:
             - Host=bpm.reborn.vn
             - Path=/adminapi/**
 
+        - id: bpm-cloud-service
+          uri: http://rox-cloud-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/bpmapi/**
+
         - id: bpm-application-service
           uri: http://rox-app-service.rox.svc.cluster.local:9090
           predicates:
