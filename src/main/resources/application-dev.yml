@@ -196,6 +196,14 @@ spring:
           uri: http://worker-service.staffx.svc.cluster.local:80
           predicates:
             - Host=staffx.vn
+            - Path=/app/**
+          filters:
+            - PreserveHostHeader
+
+        - id: marketplace-fe-service
+          uri: http://marketplace-fe-service.staffx.svc.cluster.local:80
+          predicates:
+            - Host=staffx.vn
             - Path=/**
           filters:
             - PreserveHostHeader
