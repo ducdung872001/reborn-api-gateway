@@ -119,6 +119,13 @@ spring:
           filters:
             - PreserveHostHeader
 
+        # Swagger cho bpm-cloud-service
+        - id: bpm-cloud-swagger
+          uri: http://rox-cloud-service.rox.svc.cluster.local:9090
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/swagger/**,/generated-resources/**
+
         - id: bpm-frontend-service
           uri: http://rox-fe-service.rox.svc.cluster.local:80
           predicates:
