@@ -126,6 +126,14 @@ spring:
             - Host=bpm.reborn.vn
             - Path=/swagger/**,/generated-resources/**
 
+        - id: bpm-los-frontend-service
+          uri: http://rox-los-fe-service.rox.svc.cluster.local:80
+          predicates:
+            - Host=bpm.reborn.vn
+            - Path=/los,/los/**
+          filters:
+            - PreserveHostHeader
+
         - id: bpm-frontend-service
           uri: http://rox-fe-service.rox.svc.cluster.local:80
           predicates:
